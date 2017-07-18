@@ -1,0 +1,278 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+App_C_Flags	Makefile	/^App_C_Flags := $(SGX_COMMON_CFLAGS) -fPIC -Wno-attributes $(App_Include_Paths)$/;"	m
+App_Cpp_Files	Makefile	/^App_Cpp_Files := App\/App.cpp App\/sgx_utils\/sgx_utils.cpp$/;"	m
+App_Cpp_Flags	Makefile	/^App_Cpp_Flags := $(App_C_Flags) -std=c++11$/;"	m
+App_Cpp_Objects	Makefile	/^App_Cpp_Objects := $(App_Cpp_Files:.cpp=.o)$/;"	m
+App_Include_Paths	Makefile	/^App_Include_Paths := -IApp -I$(SGX_SDK)\/include$/;"	m
+App_Link_Flags	Makefile	/^App_Link_Flags := $(SGX_COMMON_CFLAGS) -L$(SGX_LIBRARY_PATH) -l$(Urts_Library_Name) -lpthread$/;"	m
+App_Name	Makefile	/^App_Name := app$/;"	m
+Build_Mode	Makefile	/^Build_Mode = HW_RELEASE$/;"	m
+CHECK_REF_POINTER	Enclave/Enclave_t.c	9;"	d	file:
+CHECK_UNIQUE_POINTER	Enclave/Enclave_t.c	14;"	d	file:
+Crypto_Library_Name	Makefile	/^Crypto_Library_Name := sgx_tcrypto$/;"	m
+ENCLAVE_T_H__	Enclave/Enclave_t.h	2;"	d
+ENCLAVE_U_H__	App/Enclave_u.h	2;"	d
+Enclave_C_Flags	Makefile	/^Enclave_C_Flags := $(SGX_COMMON_CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector $(Enclave_Include_Paths)$/;"	m
+Enclave_Config_File	Makefile	/^Enclave_Config_File := Enclave\/Enclave.config.xml$/;"	m
+Enclave_Cpp_Files	Makefile	/^Enclave_Cpp_Files := Enclave\/Enclave.cpp Enclave\/Sealing\/Sealing.cpp$/;"	m
+Enclave_Cpp_Flags	Makefile	/^Enclave_Cpp_Flags := $(Enclave_C_Flags) -std=c++03 -nostdinc++$/;"	m
+Enclave_Cpp_Objects	Makefile	/^Enclave_Cpp_Objects := $(Enclave_Cpp_Files:.cpp=.o)$/;"	m
+Enclave_Include_Paths	Makefile	/^Enclave_Include_Paths := -IEnclave -I$(SGX_SDK)\/include -I$(SGX_SDK)\/include\/tlibc -I$(SGX_SDK)\/include\/stlport$/;"	m
+Enclave_Link_Flags	Makefile	/^Enclave_Link_Flags := $(SGX_COMMON_CFLAGS) -Wl,--no-undefined -nostdlib -nodefaultlibs -nostartfiles -L$(SGX_LIBRARY_PATH) \\$/;"	m
+Enclave_Name	Makefile	/^Enclave_Name := enclave.so$/;"	m
+Enclave_close_session_ocall	App/Enclave_u.c	/^static sgx_status_t SGX_CDECL Enclave_close_session_ocall(void* pms)$/;"	f	file:
+Enclave_create_session_ocall	App/Enclave_u.c	/^static sgx_status_t SGX_CDECL Enclave_create_session_ocall(void* pms)$/;"	f	file:
+Enclave_exchange_report_ocall	App/Enclave_u.c	/^static sgx_status_t SGX_CDECL Enclave_exchange_report_ocall(void* pms)$/;"	f	file:
+Enclave_invoke_service_ocall	App/Enclave_u.c	/^static sgx_status_t SGX_CDECL Enclave_invoke_service_ocall(void* pms)$/;"	f	file:
+Enclave_ocall_print	App/Enclave_u.c	/^static sgx_status_t SGX_CDECL Enclave_ocall_print(void* pms)$/;"	f	file:
+Enclave_sgx_oc_cpuidex	App/Enclave_u.c	/^static sgx_status_t SGX_CDECL Enclave_sgx_oc_cpuidex(void* pms)$/;"	f	file:
+Enclave_sgx_thread_set_multiple_untrusted_events_ocall	App/Enclave_u.c	/^static sgx_status_t SGX_CDECL Enclave_sgx_thread_set_multiple_untrusted_events_ocall(void* pms)$/;"	f	file:
+Enclave_sgx_thread_set_untrusted_event_ocall	App/Enclave_u.c	/^static sgx_status_t SGX_CDECL Enclave_sgx_thread_set_untrusted_event_ocall(void* pms)$/;"	f	file:
+Enclave_sgx_thread_setwait_untrusted_events_ocall	App/Enclave_u.c	/^static sgx_status_t SGX_CDECL Enclave_sgx_thread_setwait_untrusted_events_ocall(void* pms)$/;"	f	file:
+Enclave_sgx_thread_wait_untrusted_event_ocall	App/Enclave_u.c	/^static sgx_status_t SGX_CDECL Enclave_sgx_thread_wait_untrusted_event_ocall(void* pms)$/;"	f	file:
+FALSE	App/myApp.cpp	7;"	d	file:
+FALSE	App/sgx_utils/sgx_utils.cpp	11;"	d	file:
+GEN	Makefile	/^	echo "GEN  =>  $@"$/;"	m
+LD_LIBRARY_PATH	Makefile	/^	LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:. go run cgo.go$/;"	m
+LINK	Makefile	/^	echo "LINK =>  $@"$/;"	m
+RUN	Makefile	/^	echo "RUN  =>  $(App_Name) [$(SGX_MODE)|$(SGX_ARCH), OK]"$/;"	m
+SGX_ARCH	Makefile	/^	SGX_ARCH := x86$/;"	m
+SGX_ARCH	Makefile	/^SGX_ARCH ?= x64$/;"	m
+SGX_CAST	App/Enclave_u.h	14;"	d
+SGX_CAST	Enclave/Enclave_t.h	13;"	d
+SGX_COMMON_CFLAGS	Makefile	/^	SGX_COMMON_CFLAGS := -m32$/;"	m
+SGX_COMMON_CFLAGS	Makefile	/^	SGX_COMMON_CFLAGS := -m64$/;"	m
+SGX_EDGER8R	Makefile	/^	SGX_EDGER8R := $(SGX_SDK)\/bin\/x64\/sgx_edger8r$/;"	m
+SGX_EDGER8R	Makefile	/^	SGX_EDGER8R := $(SGX_SDK)\/bin\/x86\/sgx_edger8r$/;"	m
+SGX_ENCLAVE_SIGNER	Makefile	/^	SGX_ENCLAVE_SIGNER := $(SGX_SDK)\/bin\/x64\/sgx_sign$/;"	m
+SGX_ENCLAVE_SIGNER	Makefile	/^	SGX_ENCLAVE_SIGNER := $(SGX_SDK)\/bin\/x86\/sgx_sign$/;"	m
+SGX_LIBRARY_PATH	Makefile	/^	SGX_LIBRARY_PATH := $(SGX_SDK)\/lib$/;"	m
+SGX_LIBRARY_PATH	Makefile	/^	SGX_LIBRARY_PATH := $(SGX_SDK)\/lib64$/;"	m
+SGX_MODE	Makefile	/^SGX_MODE ?= SIM$/;"	m
+SGX_SDK	Makefile	/^SGX_SDK ?= \/opt\/intel\/sgxsdk$/;"	m
+SGX_UTILS_H_	App/sgx_utils/sgx_utils.h	2;"	d
+SIGN	Makefile	/^	echo "SIGN =>  $@"$/;"	m
+Service_Library_Name	Makefile	/^	Service_Library_Name := sgx_tservice$/;"	m
+Service_Library_Name	Makefile	/^	Service_Library_Name := sgx_tservice_sim$/;"	m
+Signed_Enclave_Name	Makefile	/^Signed_Enclave_Name := enclave.signed.so$/;"	m
+TRUE	App/myApp.cpp	3;"	d	file:
+TRUE	App/sgx_utils/sgx_utils.cpp	7;"	d	file:
+Trts_Library_Name	Makefile	/^	Trts_Library_Name := sgx_trts$/;"	m
+Trts_Library_Name	Makefile	/^	Trts_Library_Name := sgx_trts_sim$/;"	m
+Urts_Library_Name	Makefile	/^	Urts_Library_Name := sgx_urts$/;"	m
+Urts_Library_Name	Makefile	/^	Urts_Library_Name := sgx_urts_sim$/;"	m
+_INTEL_SGX_H	App/TEE.h	2;"	d
+_TEST_H	App/App.h	2;"	d
+check_sgx_status	Enclave/Enclave.cpp	/^void check_sgx_status(sgx_status_t &ret) {$/;"	f
+close_session_ocall	Enclave/Enclave_t.c	/^sgx_status_t SGX_CDECL close_session_ocall(sgx_status_t* retval, uint32_t sid, uint32_t timeout)$/;"	f
+counter_uuid	Enclave/Enclave.cpp	/^sgx_mc_uuid_t counter_uuid;$/;"	v
+create_counter	Enclave/Enclave.cpp	/^uint32_t create_counter(void) {$/;"	f
+create_session_ocall	Enclave/Enclave_t.c	/^sgx_status_t SGX_CDECL create_session_ocall(sgx_status_t* retval, uint32_t* sid, uint8_t* dh_msg1, uint32_t dh_msg1_size, uint32_t timeout)$/;"	f
+destroy_counter	Enclave/Enclave.cpp	/^uint32_t destroy_counter(void) {$/;"	f
+ecall_addr	Enclave/Enclave_t.c	/^	struct {void* ecall_addr; uint8_t is_priv;} ecall_table[3];$/;"	m	struct:__anon1::__anon2	file:
+ecall_table	Enclave/Enclave_t.c	/^	struct {void* ecall_addr; uint8_t is_priv;} ecall_table[3];$/;"	m	struct:__anon1	typeref:struct:__anon1::__anon2	file:
+entry_table	Enclave/Enclave_t.c	/^	uint8_t entry_table[10][3];$/;"	m	struct:__anon3	file:
+exchange_report_ocall	Enclave/Enclave_t.c	/^sgx_status_t SGX_CDECL exchange_report_ocall(sgx_status_t* retval, uint32_t sid, uint8_t* dh_msg2, uint32_t dh_msg2_size, uint8_t* dh_msg3, uint32_t dh_msg3_size, uint32_t timeout)$/;"	f
+g_dyn_entry_table	Enclave/Enclave_t.c	/^} g_dyn_entry_table = {$/;"	v	typeref:struct:__anon3
+g_ecall_table	Enclave/Enclave_t.c	/^} g_ecall_table = {$/;"	v	typeref:struct:__anon1
+generate_random_number	App/Enclave_u.c	/^sgx_status_t generate_random_number(sgx_enclave_id_t eid, int* retval)$/;"	f
+global_eid	App/App.cpp	/^sgx_enclave_id_t global_eid = 0;$/;"	v
+global_eid	App/TEE.cpp	/^sgx_enclave_id_t global_eid = 0;$/;"	v
+global_eid	App/myApp.cpp	/^sgx_enclave_id_t global_eid = 0;$/;"	v
+increment_counter	Enclave/Enclave.cpp	/^uint32_t increment_counter(void) {$/;"	f
+initialize_enclave	App/myApp.cpp	/^int initialize_enclave(sgx_enclave_id_t* eid, const std::string& launch_token_path, const std::string& enclave_name) {$/;"	f
+initialize_enclave	App/sgx_utils/sgx_utils.cpp	/^int initialize_enclave(sgx_enclave_id_t* eid, const std::string& launch_token_path, const std::string& enclave_name) {$/;"	f
+invoke_service_ocall	Enclave/Enclave_t.c	/^sgx_status_t SGX_CDECL invoke_service_ocall(sgx_status_t* retval, uint8_t* pse_message_req, uint32_t pse_message_req_size, uint8_t* pse_message_resp, uint32_t pse_message_resp_size, uint32_t timeout)$/;"	f
+is_ecall_successful	App/myApp.cpp	/^bool is_ecall_successful(sgx_status_t sgx_status, const std::string& err_msg,$/;"	f
+is_ecall_successful	App/sgx_utils/sgx_utils.cpp	/^bool is_ecall_successful(sgx_status_t sgx_status, const std::string& err_msg,$/;"	f
+is_priv	Enclave/Enclave_t.c	/^	struct {void* ecall_addr; uint8_t is_priv;} ecall_table[3];$/;"	m	struct:__anon1::__anon2	file:
+latest_counter	Enclave/Enclave.cpp	/^uint32_t latest_counter;$/;"	v
+main	App/App.cpp	/^int main(void) {$/;"	f
+main	App/myApp.cpp	/^int main(void) {$/;"	f
+main	cgo.go	/^func main() {$/;"	f
+main	cgo.go	/^package main$/;"	p
+ms_close_session_ocall_t	App/Enclave_u.c	/^typedef struct ms_close_session_ocall_t {$/;"	s	file:
+ms_close_session_ocall_t	App/Enclave_u.c	/^} ms_close_session_ocall_t;$/;"	t	typeref:struct:ms_close_session_ocall_t	file:
+ms_close_session_ocall_t	Enclave/Enclave_t.c	/^typedef struct ms_close_session_ocall_t {$/;"	s	file:
+ms_close_session_ocall_t	Enclave/Enclave_t.c	/^} ms_close_session_ocall_t;$/;"	t	typeref:struct:ms_close_session_ocall_t	file:
+ms_cpuinfo	App/Enclave_u.c	/^	int* ms_cpuinfo;$/;"	m	struct:ms_sgx_oc_cpuidex_t	file:
+ms_cpuinfo	Enclave/Enclave_t.c	/^	int* ms_cpuinfo;$/;"	m	struct:ms_sgx_oc_cpuidex_t	file:
+ms_create_session_ocall_t	App/Enclave_u.c	/^typedef struct ms_create_session_ocall_t {$/;"	s	file:
+ms_create_session_ocall_t	App/Enclave_u.c	/^} ms_create_session_ocall_t;$/;"	t	typeref:struct:ms_create_session_ocall_t	file:
+ms_create_session_ocall_t	Enclave/Enclave_t.c	/^typedef struct ms_create_session_ocall_t {$/;"	s	file:
+ms_create_session_ocall_t	Enclave/Enclave_t.c	/^} ms_create_session_ocall_t;$/;"	t	typeref:struct:ms_create_session_ocall_t	file:
+ms_dh_msg1	App/Enclave_u.c	/^	uint8_t* ms_dh_msg1;$/;"	m	struct:ms_create_session_ocall_t	file:
+ms_dh_msg1	Enclave/Enclave_t.c	/^	uint8_t* ms_dh_msg1;$/;"	m	struct:ms_create_session_ocall_t	file:
+ms_dh_msg1_size	App/Enclave_u.c	/^	uint32_t ms_dh_msg1_size;$/;"	m	struct:ms_create_session_ocall_t	file:
+ms_dh_msg1_size	Enclave/Enclave_t.c	/^	uint32_t ms_dh_msg1_size;$/;"	m	struct:ms_create_session_ocall_t	file:
+ms_dh_msg2	App/Enclave_u.c	/^	uint8_t* ms_dh_msg2;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_dh_msg2	Enclave/Enclave_t.c	/^	uint8_t* ms_dh_msg2;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_dh_msg2_size	App/Enclave_u.c	/^	uint32_t ms_dh_msg2_size;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_dh_msg2_size	Enclave/Enclave_t.c	/^	uint32_t ms_dh_msg2_size;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_dh_msg3	App/Enclave_u.c	/^	uint8_t* ms_dh_msg3;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_dh_msg3	Enclave/Enclave_t.c	/^	uint8_t* ms_dh_msg3;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_dh_msg3_size	App/Enclave_u.c	/^	uint32_t ms_dh_msg3_size;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_dh_msg3_size	Enclave/Enclave_t.c	/^	uint32_t ms_dh_msg3_size;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_exchange_report_ocall_t	App/Enclave_u.c	/^typedef struct ms_exchange_report_ocall_t {$/;"	s	file:
+ms_exchange_report_ocall_t	App/Enclave_u.c	/^} ms_exchange_report_ocall_t;$/;"	t	typeref:struct:ms_exchange_report_ocall_t	file:
+ms_exchange_report_ocall_t	Enclave/Enclave_t.c	/^typedef struct ms_exchange_report_ocall_t {$/;"	s	file:
+ms_exchange_report_ocall_t	Enclave/Enclave_t.c	/^} ms_exchange_report_ocall_t;$/;"	t	typeref:struct:ms_exchange_report_ocall_t	file:
+ms_generate_random_number_t	App/Enclave_u.c	/^typedef struct ms_generate_random_number_t {$/;"	s	file:
+ms_generate_random_number_t	App/Enclave_u.c	/^} ms_generate_random_number_t;$/;"	t	typeref:struct:ms_generate_random_number_t	file:
+ms_generate_random_number_t	Enclave/Enclave_t.c	/^typedef struct ms_generate_random_number_t {$/;"	s	file:
+ms_generate_random_number_t	Enclave/Enclave_t.c	/^} ms_generate_random_number_t;$/;"	t	typeref:struct:ms_generate_random_number_t	file:
+ms_invoke_service_ocall_t	App/Enclave_u.c	/^typedef struct ms_invoke_service_ocall_t {$/;"	s	file:
+ms_invoke_service_ocall_t	App/Enclave_u.c	/^} ms_invoke_service_ocall_t;$/;"	t	typeref:struct:ms_invoke_service_ocall_t	file:
+ms_invoke_service_ocall_t	Enclave/Enclave_t.c	/^typedef struct ms_invoke_service_ocall_t {$/;"	s	file:
+ms_invoke_service_ocall_t	Enclave/Enclave_t.c	/^} ms_invoke_service_ocall_t;$/;"	t	typeref:struct:ms_invoke_service_ocall_t	file:
+ms_leaf	App/Enclave_u.c	/^	int ms_leaf;$/;"	m	struct:ms_sgx_oc_cpuidex_t	file:
+ms_leaf	Enclave/Enclave_t.c	/^	int ms_leaf;$/;"	m	struct:ms_sgx_oc_cpuidex_t	file:
+ms_ocall_print_t	App/Enclave_u.c	/^typedef struct ms_ocall_print_t {$/;"	s	file:
+ms_ocall_print_t	App/Enclave_u.c	/^} ms_ocall_print_t;$/;"	t	typeref:struct:ms_ocall_print_t	file:
+ms_ocall_print_t	Enclave/Enclave_t.c	/^typedef struct ms_ocall_print_t {$/;"	s	file:
+ms_ocall_print_t	Enclave/Enclave_t.c	/^} ms_ocall_print_t;$/;"	t	typeref:struct:ms_ocall_print_t	file:
+ms_plaintext	App/Enclave_u.c	/^	uint8_t* ms_plaintext;$/;"	m	struct:ms_seal_t	file:
+ms_plaintext	App/Enclave_u.c	/^	uint8_t* ms_plaintext;$/;"	m	struct:ms_unseal_t	file:
+ms_plaintext	Enclave/Enclave_t.c	/^	uint8_t* ms_plaintext;$/;"	m	struct:ms_seal_t	file:
+ms_plaintext	Enclave/Enclave_t.c	/^	uint8_t* ms_plaintext;$/;"	m	struct:ms_unseal_t	file:
+ms_plaintext_len	App/Enclave_u.c	/^	size_t ms_plaintext_len;$/;"	m	struct:ms_seal_t	file:
+ms_plaintext_len	App/Enclave_u.c	/^	uint32_t ms_plaintext_len;$/;"	m	struct:ms_unseal_t	file:
+ms_plaintext_len	Enclave/Enclave_t.c	/^	size_t ms_plaintext_len;$/;"	m	struct:ms_seal_t	file:
+ms_plaintext_len	Enclave/Enclave_t.c	/^	uint32_t ms_plaintext_len;$/;"	m	struct:ms_unseal_t	file:
+ms_pse_message_req	App/Enclave_u.c	/^	uint8_t* ms_pse_message_req;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_pse_message_req	Enclave/Enclave_t.c	/^	uint8_t* ms_pse_message_req;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_pse_message_req_size	App/Enclave_u.c	/^	uint32_t ms_pse_message_req_size;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_pse_message_req_size	Enclave/Enclave_t.c	/^	uint32_t ms_pse_message_req_size;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_pse_message_resp	App/Enclave_u.c	/^	uint8_t* ms_pse_message_resp;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_pse_message_resp	Enclave/Enclave_t.c	/^	uint8_t* ms_pse_message_resp;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_pse_message_resp_size	App/Enclave_u.c	/^	uint32_t ms_pse_message_resp_size;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_pse_message_resp_size	Enclave/Enclave_t.c	/^	uint32_t ms_pse_message_resp_size;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_retval	App/Enclave_u.c	/^	int ms_retval;$/;"	m	struct:ms_generate_random_number_t	file:
+ms_retval	App/Enclave_u.c	/^	int ms_retval;$/;"	m	struct:ms_sgx_thread_set_multiple_untrusted_events_ocall_t	file:
+ms_retval	App/Enclave_u.c	/^	int ms_retval;$/;"	m	struct:ms_sgx_thread_set_untrusted_event_ocall_t	file:
+ms_retval	App/Enclave_u.c	/^	int ms_retval;$/;"	m	struct:ms_sgx_thread_setwait_untrusted_events_ocall_t	file:
+ms_retval	App/Enclave_u.c	/^	int ms_retval;$/;"	m	struct:ms_sgx_thread_wait_untrusted_event_ocall_t	file:
+ms_retval	App/Enclave_u.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_close_session_ocall_t	file:
+ms_retval	App/Enclave_u.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_create_session_ocall_t	file:
+ms_retval	App/Enclave_u.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_retval	App/Enclave_u.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_retval	App/Enclave_u.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_seal_t	file:
+ms_retval	App/Enclave_u.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_unseal_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	int ms_retval;$/;"	m	struct:ms_generate_random_number_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	int ms_retval;$/;"	m	struct:ms_sgx_thread_set_multiple_untrusted_events_ocall_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	int ms_retval;$/;"	m	struct:ms_sgx_thread_set_untrusted_event_ocall_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	int ms_retval;$/;"	m	struct:ms_sgx_thread_setwait_untrusted_events_ocall_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	int ms_retval;$/;"	m	struct:ms_sgx_thread_wait_untrusted_event_ocall_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_close_session_ocall_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_create_session_ocall_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_seal_t	file:
+ms_retval	Enclave/Enclave_t.c	/^	sgx_status_t ms_retval;$/;"	m	struct:ms_unseal_t	file:
+ms_seal_t	App/Enclave_u.c	/^typedef struct ms_seal_t {$/;"	s	file:
+ms_seal_t	App/Enclave_u.c	/^} ms_seal_t;$/;"	t	typeref:struct:ms_seal_t	file:
+ms_seal_t	Enclave/Enclave_t.c	/^typedef struct ms_seal_t {$/;"	s	file:
+ms_seal_t	Enclave/Enclave_t.c	/^} ms_seal_t;$/;"	t	typeref:struct:ms_seal_t	file:
+ms_sealed_data	App/Enclave_u.c	/^	sgx_sealed_data_t* ms_sealed_data;$/;"	m	struct:ms_seal_t	file:
+ms_sealed_data	App/Enclave_u.c	/^	sgx_sealed_data_t* ms_sealed_data;$/;"	m	struct:ms_unseal_t	file:
+ms_sealed_data	Enclave/Enclave_t.c	/^	sgx_sealed_data_t* ms_sealed_data;$/;"	m	struct:ms_seal_t	file:
+ms_sealed_data	Enclave/Enclave_t.c	/^	sgx_sealed_data_t* ms_sealed_data;$/;"	m	struct:ms_unseal_t	file:
+ms_sealed_size	App/Enclave_u.c	/^	size_t ms_sealed_size;$/;"	m	struct:ms_seal_t	file:
+ms_sealed_size	App/Enclave_u.c	/^	size_t ms_sealed_size;$/;"	m	struct:ms_unseal_t	file:
+ms_sealed_size	Enclave/Enclave_t.c	/^	size_t ms_sealed_size;$/;"	m	struct:ms_seal_t	file:
+ms_sealed_size	Enclave/Enclave_t.c	/^	size_t ms_sealed_size;$/;"	m	struct:ms_unseal_t	file:
+ms_self	App/Enclave_u.c	/^	void* ms_self;$/;"	m	struct:ms_sgx_thread_setwait_untrusted_events_ocall_t	file:
+ms_self	App/Enclave_u.c	/^	void* ms_self;$/;"	m	struct:ms_sgx_thread_wait_untrusted_event_ocall_t	file:
+ms_self	Enclave/Enclave_t.c	/^	void* ms_self;$/;"	m	struct:ms_sgx_thread_setwait_untrusted_events_ocall_t	file:
+ms_self	Enclave/Enclave_t.c	/^	void* ms_self;$/;"	m	struct:ms_sgx_thread_wait_untrusted_event_ocall_t	file:
+ms_sgx_oc_cpuidex_t	App/Enclave_u.c	/^typedef struct ms_sgx_oc_cpuidex_t {$/;"	s	file:
+ms_sgx_oc_cpuidex_t	App/Enclave_u.c	/^} ms_sgx_oc_cpuidex_t;$/;"	t	typeref:struct:ms_sgx_oc_cpuidex_t	file:
+ms_sgx_oc_cpuidex_t	Enclave/Enclave_t.c	/^typedef struct ms_sgx_oc_cpuidex_t {$/;"	s	file:
+ms_sgx_oc_cpuidex_t	Enclave/Enclave_t.c	/^} ms_sgx_oc_cpuidex_t;$/;"	t	typeref:struct:ms_sgx_oc_cpuidex_t	file:
+ms_sgx_thread_set_multiple_untrusted_events_ocall_t	App/Enclave_u.c	/^typedef struct ms_sgx_thread_set_multiple_untrusted_events_ocall_t {$/;"	s	file:
+ms_sgx_thread_set_multiple_untrusted_events_ocall_t	App/Enclave_u.c	/^} ms_sgx_thread_set_multiple_untrusted_events_ocall_t;$/;"	t	typeref:struct:ms_sgx_thread_set_multiple_untrusted_events_ocall_t	file:
+ms_sgx_thread_set_multiple_untrusted_events_ocall_t	Enclave/Enclave_t.c	/^typedef struct ms_sgx_thread_set_multiple_untrusted_events_ocall_t {$/;"	s	file:
+ms_sgx_thread_set_multiple_untrusted_events_ocall_t	Enclave/Enclave_t.c	/^} ms_sgx_thread_set_multiple_untrusted_events_ocall_t;$/;"	t	typeref:struct:ms_sgx_thread_set_multiple_untrusted_events_ocall_t	file:
+ms_sgx_thread_set_untrusted_event_ocall_t	App/Enclave_u.c	/^typedef struct ms_sgx_thread_set_untrusted_event_ocall_t {$/;"	s	file:
+ms_sgx_thread_set_untrusted_event_ocall_t	App/Enclave_u.c	/^} ms_sgx_thread_set_untrusted_event_ocall_t;$/;"	t	typeref:struct:ms_sgx_thread_set_untrusted_event_ocall_t	file:
+ms_sgx_thread_set_untrusted_event_ocall_t	Enclave/Enclave_t.c	/^typedef struct ms_sgx_thread_set_untrusted_event_ocall_t {$/;"	s	file:
+ms_sgx_thread_set_untrusted_event_ocall_t	Enclave/Enclave_t.c	/^} ms_sgx_thread_set_untrusted_event_ocall_t;$/;"	t	typeref:struct:ms_sgx_thread_set_untrusted_event_ocall_t	file:
+ms_sgx_thread_setwait_untrusted_events_ocall_t	App/Enclave_u.c	/^typedef struct ms_sgx_thread_setwait_untrusted_events_ocall_t {$/;"	s	file:
+ms_sgx_thread_setwait_untrusted_events_ocall_t	App/Enclave_u.c	/^} ms_sgx_thread_setwait_untrusted_events_ocall_t;$/;"	t	typeref:struct:ms_sgx_thread_setwait_untrusted_events_ocall_t	file:
+ms_sgx_thread_setwait_untrusted_events_ocall_t	Enclave/Enclave_t.c	/^typedef struct ms_sgx_thread_setwait_untrusted_events_ocall_t {$/;"	s	file:
+ms_sgx_thread_setwait_untrusted_events_ocall_t	Enclave/Enclave_t.c	/^} ms_sgx_thread_setwait_untrusted_events_ocall_t;$/;"	t	typeref:struct:ms_sgx_thread_setwait_untrusted_events_ocall_t	file:
+ms_sgx_thread_wait_untrusted_event_ocall_t	App/Enclave_u.c	/^typedef struct ms_sgx_thread_wait_untrusted_event_ocall_t {$/;"	s	file:
+ms_sgx_thread_wait_untrusted_event_ocall_t	App/Enclave_u.c	/^} ms_sgx_thread_wait_untrusted_event_ocall_t;$/;"	t	typeref:struct:ms_sgx_thread_wait_untrusted_event_ocall_t	file:
+ms_sgx_thread_wait_untrusted_event_ocall_t	Enclave/Enclave_t.c	/^typedef struct ms_sgx_thread_wait_untrusted_event_ocall_t {$/;"	s	file:
+ms_sgx_thread_wait_untrusted_event_ocall_t	Enclave/Enclave_t.c	/^} ms_sgx_thread_wait_untrusted_event_ocall_t;$/;"	t	typeref:struct:ms_sgx_thread_wait_untrusted_event_ocall_t	file:
+ms_sid	App/Enclave_u.c	/^	uint32_t ms_sid;$/;"	m	struct:ms_close_session_ocall_t	file:
+ms_sid	App/Enclave_u.c	/^	uint32_t ms_sid;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_sid	App/Enclave_u.c	/^	uint32_t* ms_sid;$/;"	m	struct:ms_create_session_ocall_t	file:
+ms_sid	Enclave/Enclave_t.c	/^	uint32_t ms_sid;$/;"	m	struct:ms_close_session_ocall_t	file:
+ms_sid	Enclave/Enclave_t.c	/^	uint32_t ms_sid;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_sid	Enclave/Enclave_t.c	/^	uint32_t* ms_sid;$/;"	m	struct:ms_create_session_ocall_t	file:
+ms_str	App/Enclave_u.c	/^	char* ms_str;$/;"	m	struct:ms_ocall_print_t	file:
+ms_str	Enclave/Enclave_t.c	/^	char* ms_str;$/;"	m	struct:ms_ocall_print_t	file:
+ms_subleaf	App/Enclave_u.c	/^	int ms_subleaf;$/;"	m	struct:ms_sgx_oc_cpuidex_t	file:
+ms_subleaf	Enclave/Enclave_t.c	/^	int ms_subleaf;$/;"	m	struct:ms_sgx_oc_cpuidex_t	file:
+ms_timeout	App/Enclave_u.c	/^	uint32_t ms_timeout;$/;"	m	struct:ms_close_session_ocall_t	file:
+ms_timeout	App/Enclave_u.c	/^	uint32_t ms_timeout;$/;"	m	struct:ms_create_session_ocall_t	file:
+ms_timeout	App/Enclave_u.c	/^	uint32_t ms_timeout;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_timeout	App/Enclave_u.c	/^	uint32_t ms_timeout;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_timeout	Enclave/Enclave_t.c	/^	uint32_t ms_timeout;$/;"	m	struct:ms_close_session_ocall_t	file:
+ms_timeout	Enclave/Enclave_t.c	/^	uint32_t ms_timeout;$/;"	m	struct:ms_create_session_ocall_t	file:
+ms_timeout	Enclave/Enclave_t.c	/^	uint32_t ms_timeout;$/;"	m	struct:ms_exchange_report_ocall_t	file:
+ms_timeout	Enclave/Enclave_t.c	/^	uint32_t ms_timeout;$/;"	m	struct:ms_invoke_service_ocall_t	file:
+ms_total	App/Enclave_u.c	/^	size_t ms_total;$/;"	m	struct:ms_sgx_thread_set_multiple_untrusted_events_ocall_t	file:
+ms_total	Enclave/Enclave_t.c	/^	size_t ms_total;$/;"	m	struct:ms_sgx_thread_set_multiple_untrusted_events_ocall_t	file:
+ms_unseal_t	App/Enclave_u.c	/^typedef struct ms_unseal_t {$/;"	s	file:
+ms_unseal_t	App/Enclave_u.c	/^} ms_unseal_t;$/;"	t	typeref:struct:ms_unseal_t	file:
+ms_unseal_t	Enclave/Enclave_t.c	/^typedef struct ms_unseal_t {$/;"	s	file:
+ms_unseal_t	Enclave/Enclave_t.c	/^} ms_unseal_t;$/;"	t	typeref:struct:ms_unseal_t	file:
+ms_waiter	App/Enclave_u.c	/^	void* ms_waiter;$/;"	m	struct:ms_sgx_thread_set_untrusted_event_ocall_t	file:
+ms_waiter	App/Enclave_u.c	/^	void* ms_waiter;$/;"	m	struct:ms_sgx_thread_setwait_untrusted_events_ocall_t	file:
+ms_waiter	Enclave/Enclave_t.c	/^	void* ms_waiter;$/;"	m	struct:ms_sgx_thread_set_untrusted_event_ocall_t	file:
+ms_waiter	Enclave/Enclave_t.c	/^	void* ms_waiter;$/;"	m	struct:ms_sgx_thread_setwait_untrusted_events_ocall_t	file:
+ms_waiters	App/Enclave_u.c	/^	void** ms_waiters;$/;"	m	struct:ms_sgx_thread_set_multiple_untrusted_events_ocall_t	file:
+ms_waiters	Enclave/Enclave_t.c	/^	void** ms_waiters;$/;"	m	struct:ms_sgx_thread_set_multiple_untrusted_events_ocall_t	file:
+nr_ecall	Enclave/Enclave_t.c	/^	size_t nr_ecall;$/;"	m	struct:__anon1	file:
+nr_ocall	App/Enclave_u.c	/^	size_t nr_ocall;$/;"	m	struct:__anon4	file:
+nr_ocall	Enclave/Enclave_t.c	/^	size_t nr_ocall;$/;"	m	struct:__anon3	file:
+ocall_print	App/App.cpp	/^void ocall_print(const char* str) {$/;"	f
+ocall_print	App/TEE.cpp	/^void ocall_print(const char* str) {$/;"	f
+ocall_print	App/myApp.cpp	/^void ocall_print(const char* str) {$/;"	f
+ocall_print	Enclave/Enclave_t.c	/^sgx_status_t SGX_CDECL ocall_print(const char* str)$/;"	f
+ocall_table_Enclave	App/Enclave_u.c	/^} ocall_table_Enclave = {$/;"	v	typeref:struct:__anon4	file:
+ocall_uint32_t_print	App/App.cpp	/^void ocall_uint32_t_print(uint32_t *arr, size_t len) {$/;"	f
+ocall_uint32_t_print	App/TEE.cpp	/^void ocall_uint32_t_print(uint32_t *arr, size_t len) {$/;"	f
+ocall_uint32_t_print	App/myApp.cpp	/^void ocall_uint32_t_print(uint32_t *arr, size_t len) {$/;"	f
+ocall_uint8_t_print	App/App.cpp	/^void ocall_uint8_t_print(uint8_t *arr, size_t len) {$/;"	f
+ocall_uint8_t_print	App/TEE.cpp	/^void ocall_uint8_t_print(uint8_t *arr, size_t len) {$/;"	f
+ocall_uint8_t_print	App/myApp.cpp	/^void ocall_uint8_t_print(uint8_t *arr, size_t len) {$/;"	f
+old_functions	App/App.cpp	/^void old_functions(void) {$/;"	f
+print_error_message	App/myApp.cpp	/^void print_error_message(sgx_status_t ret) {$/;"	f
+print_error_message	App/sgx_utils/sgx_utils.cpp	/^void print_error_message(sgx_status_t ret) {$/;"	f
+read_counter	Enclave/Enclave.cpp	/^uint32_t read_counter(uint32_t *ctr) {$/;"	f
+seal	App/Enclave_u.c	/^sgx_status_t seal(sgx_enclave_id_t eid, sgx_status_t* retval, uint8_t* plaintext, size_t plaintext_len, sgx_sealed_data_t* sealed_data, size_t sealed_size)$/;"	f
+seal	Enclave/Sealing/Sealing.cpp	/^sgx_status_t seal(uint8_t* plaintext, size_t plaintext_len, sgx_sealed_data_t* sealed_data, size_t sealed_size) {$/;"	f
+sgx_generate_random_number	Enclave/Enclave_t.c	/^static sgx_status_t SGX_CDECL sgx_generate_random_number(void* pms)$/;"	f	file:
+sgx_oc_cpuidex	Enclave/Enclave_t.c	/^sgx_status_t SGX_CDECL sgx_oc_cpuidex(int cpuinfo[4], int leaf, int subleaf)$/;"	f
+sgx_seal	Enclave/Enclave_t.c	/^static sgx_status_t SGX_CDECL sgx_seal(void* pms)$/;"	f	file:
+sgx_test_create_counter	Enclave/Enclave_t.c	/^static sgx_status_t sgx_test_create_counter(void)$/;"	f	file:
+sgx_thread_set_multiple_untrusted_events_ocall	Enclave/Enclave_t.c	/^sgx_status_t SGX_CDECL sgx_thread_set_multiple_untrusted_events_ocall(int* retval, const void** waiters, size_t total)$/;"	f
+sgx_thread_set_untrusted_event_ocall	Enclave/Enclave_t.c	/^sgx_status_t SGX_CDECL sgx_thread_set_untrusted_event_ocall(int* retval, const void* waiter)$/;"	f
+sgx_thread_setwait_untrusted_events_ocall	Enclave/Enclave_t.c	/^sgx_status_t SGX_CDECL sgx_thread_setwait_untrusted_events_ocall(int* retval, const void* waiter, const void* self)$/;"	f
+sgx_thread_wait_untrusted_event_ocall	Enclave/Enclave_t.c	/^sgx_status_t SGX_CDECL sgx_thread_wait_untrusted_event_ocall(int* retval, const void* self)$/;"	f
+sgx_unseal	Enclave/Enclave_t.c	/^static sgx_status_t SGX_CDECL sgx_unseal(void* pms)$/;"	f	file:
+table	App/Enclave_u.c	/^	void * table[10];$/;"	m	struct:__anon4	file:
+test	cgo.go	/^func test() {$/;"	f
+testMain	App/App.cpp	/^int testMain(void) {$/;"	f
+testMain	App/TEE.cpp	/^int testMain(void) {$/;"	f
+test_ecc	Enclave/Enclave.cpp	/^int test_ecc(void) {$/;"	f
+unseal	App/Enclave_u.c	/^sgx_status_t unseal(sgx_enclave_id_t eid, sgx_status_t* retval, sgx_sealed_data_t* sealed_data, size_t sealed_size, uint8_t* plaintext, uint32_t plaintext_len)$/;"	f
+unseal	Enclave/Sealing/Sealing.cpp	/^sgx_status_t unseal(sgx_sealed_data_t* sealed_data, size_t sealed_size, uint8_t* plaintext, uint32_t plaintext_len) {$/;"	f
