@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <iostream>
-#include "Enclave_u.h"
-#include "sgx_urts.h"
-#include "sgx_utils/sgx_utils.h"
+#include "App.h"
 
 /* Global EID shared by multiple threads */
 sgx_enclave_id_t global_eid = 0;
@@ -11,8 +7,20 @@ sgx_enclave_id_t global_eid = 0;
 void ocall_print(const char* str) {
     printf("%s\n", str);
 }
+void ocall_uint32_t_print(uint32_t *arr, size_t len) {
+    for (int i = 0; i < len; i++) {
+        printf("%02X", arr[i]);
+    }
+    printf("\n");
+}
+void ocall_uint8_t_print(uint8_t *arr, size_t len) {
+    for (int i = 0; i < len; i++) {
+        printf("%02X", arr[i]);
+    }
+    printf("\n");
+}
 
-int main(int argc, char const *argv[]) {
+int testMain(void) {
     if (initialize_enclave(&global_eid, "enclave.token", "enclave.signed.so") < 0) {
         std::cout << "Fail to initialize enclave." << std::endl;
         return 1;
@@ -49,5 +57,40 @@ int main(int argc, char const *argv[]) {
 
     std::cout << "Seal round trip success! Receive back " << unsealed << std::endl;
 
+    std::cout << "test monotonic counter" << "\n";
+    create_counter(global_eid, &ptr); 
+    printf("return from tcc: %d\n", ptr);
+    uint64_t ctr;
+    uint64_t uptr;
+    read_counter(global_eid, &uptr, &ctr);
+    printf("read counter: %ld\n", ctr);
+
+    increment_counter(global_eid, &ptr);
+    printf("increment counter: %d\n", ptr);
+
+    read_counter(global_eid, &uptr, &ctr);
+    printf("read counter: %ld\n", ctr); 
+    increment_counter(global_eid, &ptr);
+    printf("increment counter: %d\n", ptr);
+
+    read_counter(global_eid, &uptr, &ctr);
+    printf("read counter: %ld\n", ctr); 
+    increment_counter(global_eid, &ptr);
+    printf("increment counter: %d\n", ptr);
+
+    read_counter(global_eid, &uptr, &ctr);
+    printf("read counter: %ld\n", ctr); 
+
+    test_ecc(global_eid, &ptr);
     return 0;
+
+}
+
+int main(void) {
+    testMain();
+    return 0;
+}
+
+void old_functions(void) {
+
 }

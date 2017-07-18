@@ -162,50 +162,68 @@ endif
 
 run: all
 ifneq ($(Build_Mode), HW_RELEASE)
-	@$(CURDIR)/$(App_Name)
-	@echo "RUN  =>  $(App_Name) [$(SGX_MODE)|$(SGX_ARCH), OK]"
+	$(CURDIR)/$(App_Name)
+	echo "RUN  =>  $(App_Name) [$(SGX_MODE)|$(SGX_ARCH), OK]"
 endif
+
+
 
 ######## App Objects ########
 
+
 App/Enclave_u.c: $(SGX_EDGER8R) Enclave/Enclave.edl
-	@cd App && $(SGX_EDGER8R) --untrusted ../Enclave/Enclave.edl --search-path ../Enclave --search-path $(SGX_SDK)/include
-	@echo "GEN  =>  $@"
+	# Edger8r with untrusted flag generates Enclave_u.c, Enclave_u.h
+	cd App && $(SGX_EDGER8R) --untrusted ../Enclave/Enclave.edl --search-path ../Enclave --search-path $(SGX_SDK)/include
+	echo "GEN  =>  $@"
 
 App/Enclave_u.o: App/Enclave_u.c
-	@$(CC) $(App_C_Flags) -c $< -o $@
-	@echo "CC   <=  $<"
+	$(CC) $(App_C_Flags) -c $< -o $@
+	echo "CC   <=  $<"
 
 App/%.o: App/%.cpp
-	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
-	@echo "CXX  <=  $<"
+	$(CXX) $(App_Cpp_Flags) -c $< -o $@
+	echo "CXX  <=  $<"
 
 $(App_Name): App/Enclave_u.o $(App_Cpp_Objects)
-	@$(CXX) $^ -o $@ $(App_Link_Flags)
-	@echo "LINK =>  $@"
+	$(CXX) $^ -o $@ $(App_Link_Flags)
+	echo "LINK =>  $@"
 
 
 ######## Enclave Objects ########
 
 Enclave/Enclave_t.c: $(SGX_EDGER8R) Enclave/Enclave.edl
-	@cd Enclave && $(SGX_EDGER8R) --trusted ../Enclave/Enclave.edl --search-path ../Enclave --search-path $(SGX_SDK)/include
-	@echo "GEN  =>  $@"
+	cd Enclave && $(SGX_EDGER8R) --trusted ../Enclave/Enclave.edl --search-path ../Enclave --search-path $(SGX_SDK)/include
+	echo "GEN  =>  $@"
 
 Enclave/Enclave_t.o: Enclave/Enclave_t.c
-	@$(CC) $(Enclave_C_Flags) -c $< -o $@
-	@echo "CC   <=  $<"
+	$(CC) $(Enclave_C_Flags) -c $< -o $@
+	echo "CC   <=  $<"
 
 Enclave/%.o: Enclave/%.cpp
-	@$(CXX) $(Enclave_Cpp_Flags) -c $< -o $@
-	@echo "CXX  <=  $<"
+	$(CXX) $(Enclave_Cpp_Flags) -c $< -o $@
+	echo "CXX  <=  $<"
 
 $(Enclave_Name): Enclave/Enclave_t.o $(Enclave_Cpp_Objects)
-	@$(CXX) $^ -o $@ $(Enclave_Link_Flags)
-	@echo "LINK =>  $@"
+	$(CXX) $^ -o $@ $(Enclave_Link_Flags)
+	echo "LINK =>  $@"
 
 $(Signed_Enclave_Name): $(Enclave_Name)
-	@$(SGX_ENCLAVE_SIGNER) sign -key Enclave/Enclave_private.pem -enclave $(Enclave_Name) -out $@ -config $(Enclave_Config_File)
-	@echo "SIGN =>  $@"
+	$(SGX_ENCLAVE_SIGNER) sign -key Enclave/Enclave_private.pem -enclave $(Enclave_Name) -out $@ -config $(Enclave_Config_File)
+	echo "SIGN =>  $@"
+
+######## Library ########
+App/sgx_utils/sgx_utils.o: App/sgx_utils/sgx_utils.cpp
+	$(CXX) $(App_Cpp_Flags) -c $< -o $@
+
+App/TEE.o: App/TEE.cpp App/Enclave_u.c
+	$(CXX) $(App_Cpp_Flags) -c $< -o $@
+
+libtee.so: App/TEE.o App/sgx_utils/sgx_utils.o App/Enclave_u.o
+	$(CXX) -shared $^ -o $@ $(App_Link_Flags)
+
+cgo: libtee.so
+	LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:. go run cgo.go
+
 
 .PHONY: clean
 
