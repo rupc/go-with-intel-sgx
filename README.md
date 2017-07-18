@@ -14,7 +14,7 @@ make cgo
 ```
 
 # Features
-This program shows following features, running inside enclave.
+Following features are demonstrated, running inside enclave.
 - Monotonic counter
 - ECDSA: private/public key generation, signing, verifying
 - SHA256
