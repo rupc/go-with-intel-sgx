@@ -3,7 +3,7 @@ There are many examples of cgo which connects C/C++ source codes to native Go pr
 
 This example would be useful to those who want to utilize Intel SGX using Go Lang.
 
-If you are curious about how it works, check cgo target in Makefile
+If you are curious about how it works, check [cgo target in Makefile](https://github.com/rupc/go-with-intel-sgx/blob/master/Makefile#L214)
 
 # How to test
 ```
