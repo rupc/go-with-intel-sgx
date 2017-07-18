@@ -1,7 +1,7 @@
 # Go with Intel SGX 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)]()
 
-There are many examples of cgo which connects C/C++ source codes to native Go program. And I also saw many sample codes writtin for Intel SGX. But I couldn't find a combination of both cgo and Intel SGX. So I made it.
+There are many examples of cgo which connects C/C++ source codes to native Go program. And I also saw many sample codes written for Intel SGX. But I couldn't find a combination of both cgo and Intel SGX. So I made it.
 
 This example would be useful to those who want to utilize Intel SGX using Go Lang.
 
