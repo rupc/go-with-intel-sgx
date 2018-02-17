@@ -1,11 +1,8 @@
 # Go with Intel SGX 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)]()
 
-There are many examples of cgo which connects C/C++ source codes to native Go program. And I also saw many sample codes written for Intel SGX. But I couldn't find a combination of both cgo and Intel SGX. So I made it.
-
-This example would be useful to those who want to utilize Intel SGX using Go Lang.
-
-If you are curious about how it works, check [cgo target in Makefile](https://github.com/rupc/go-with-intel-sgx/blob/master/Makefile#L214)
+**go-with-intel-sgx** shows an example showing how to make use of Intel SGX in GoLang as a library.
+After compiling([cgo target in Makefile](https://github.com/rupc/go-with-intel-sgx/blob/master/Makefile#L214)), it creates *libtee*, which calls functions in enclave within GoLang through [cgo](https://golang.org/cmd/cgo/) interface.
 
 # How to test
 ```
@@ -21,5 +18,5 @@ Following features are demonstrated, running inside enclave.
 - ECDSA: private/public key generation, signing, verifying
 - SHA256
 
-# Thanks to
-I expand [hello-enclave](https://github.com/digawp/hello-enclave) to build cgo-sgx connection
+# Reference
+- [hello-enclave](https://github.com/digawp/hello-enclave)
