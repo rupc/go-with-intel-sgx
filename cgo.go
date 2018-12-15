@@ -3,7 +3,8 @@ package main
 
 /*
 #include "./App/TEE.h"
-#cgo LDFLAGS: -I./App -L. -ltee 
+#cgo CFLAGS: -I./App
+#cgo LDFLAGS: -L. -ltee
 */
 import "C"
 
