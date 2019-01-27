@@ -1,8 +1,8 @@
 # Go with Intel SGX 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)]()
 
-**go-with-intel-sgx** shows an example showing how to make use of Intel SGX in GoLang as a typical c-style library.
-After compiling([cgo target in Makefile](https://github.com/rupc/go-with-intel-sgx/blob/master/Makefile#L214)), it creates *libtee*, which represents library for trusted execution environment and it calls series of functions inside enclave through [cgo](https://golang.org/cmd/cgo/) interface.
+**go-with-intel-sgx** is an example showing how to make use of Intel SGX in GoLang as using [cgo](https://golang.org/cmd/cgo/) interface.
+After compiling([cgo target in Makefile](https://github.com/rupc/go-with-intel-sgx/blob/master/Makefile#L214)), it creates *libtee*, a library for trusted execution environment. *libtee* calls series of SGX functions inside enclave through [cgo](https://golang.org/cmd/cgo/) interface. 
 
 # How to test
 ```
