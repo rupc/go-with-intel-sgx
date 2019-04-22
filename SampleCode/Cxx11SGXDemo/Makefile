@@ -266,10 +266,7 @@ $(Signed_Enclave_Name): $(Enclave_Name)
 	@echo "SIGN =>  $@"
 
 ######## Library ########
-App/TrustedLibrary/Libcxx.o: App/TrustedLibrary/Libcxx.cpp
-	$(CXX) $(SGX_COMMON_CXXFLAGS) $(App_Cpp_Flags) -c $< -o $@
-
-libtee.so: App/App.o App/Enclave_u.o App/TrustedLibrary/Libcxx.o
+libtee.so: App/Enclave_u.o $(App_Cpp_Objects) 
 	$(CXX) -shared $^ -o $@ $(App_Link_Flags) 
 
 cgo: libtee.so
