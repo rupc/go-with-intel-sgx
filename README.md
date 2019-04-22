@@ -15,4 +15,4 @@ make && make cgo
 (It is tested under SGX v2.5)
 
 # TODO
-Currently, I only added [Cxx11SGXDemo](https://github.com/intel/linux-sgx/tree/sgx_2.5/SampleCode/Cxx11SGXDemo) which is one of the official sample codes by [linux-sgx](https://github.com/intel/linux-sgx/tree/sgx_2.5/). A plan to add more sample examples as in sgxsdk/SampleCode/ (e.g., RemoteAttestation)
+Currently, I only added [Cxx11SGXDemo](https://github.com/intel/linux-sgx/tree/sgx_2.5/SampleCode/Cxx11SGXDemo) which is one of the official sample codes by [linux-sgx](https://github.com/intel/linux-sgx/tree/sgx_2.5/). A plan to add more sample examples as in sgxsdk/SampleCode/ (e.g., RemoteAttestation) is going to be done.
