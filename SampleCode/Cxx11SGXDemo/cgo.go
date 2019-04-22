@@ -2,7 +2,7 @@ package main
 
 /*
 #include "./App/App.h"
-#cgo CFLAGS: -I./App -I/home/jyr/work/proj/sgx/linux-2.5/ubuntu16.04-server/sgxsdk/include
+#cgo CFLAGS: -I./App -I$SGX_SDK/include
 #cgo LDFLAGS: -L. -ltee
 */
 import "C"
