@@ -14,5 +14,32 @@ make && make cgo
 ```
 (It is tested under SGX v2.5)
 
+
+```go
+package main
+
+/*
+#include "./App/App.h"
+#cgo CFLAGS: -I./App
+#cgo LDFLAGS: -L. -ltee
+*/
+import "C"
+
+import (
+	"fmt"
+)
+
+//export test
+func test() {
+	fmt.Printf("intel sgx hello\n")
+}
+
+func main() {
+	C.testMain()
+	// test()
+}
+```
+
+
 # TODO
 Currently, I only added [Cxx11SGXDemo](https://github.com/intel/linux-sgx/tree/sgx_2.5/SampleCode/Cxx11SGXDemo) which is one of the official sample codes by [linux-sgx](https://github.com/intel/linux-sgx/tree/sgx_2.5/). A plan to add more sample examples as in sgxsdk/SampleCode/ (e.g., RemoteAttestation) is going to be done.
