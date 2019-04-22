@@ -3,7 +3,7 @@
 
 **go-with-intel-sgx** shows how to call C/C++ functions of Intel SGX enclave in Go language using cgo interface.
 
-After compiling([cgo target in Makefile](https://github.com/rupc/go-with-intel-sgx/blob/master/Makefile#L214)) in each sgx provided sample code in SampleCode directory, it creates a *libtee* which calls C/C++ functions for using enclave functionalities.
+After compiling in each sample codes in a SampleCode directory, it creates a *libtee* which calls C/C++ functions for using enclave functionalities.
 
 # How to test
 ```
@@ -15,5 +15,4 @@ make && make cgo
 (It is tested under SGX v2.5)
 
 # TODO
-Currently, I only added Cxx11SGXDemo which is one of the official sample codes by [linux-sgx](https://github.com/intel/linux-sgx/tree/sgx_2.5/SampleCode/Cxx11SGXDemo)
-A plan to add more sample examples as in sgxsdk/SampleCode/ (e.g., RemoteAttestation)
+Currently, I only added [Cxx11SGXDemo](https://github.com/intel/linux-sgx/tree/sgx_2.5/SampleCode/Cxx11SGXDemo) which is one of the official sample codes by [linux-sgx](https://github.com/intel/linux-sgx/tree/sgx_2.5/). A plan to add more sample examples as in sgxsdk/SampleCode/ (e.g., RemoteAttestation)
