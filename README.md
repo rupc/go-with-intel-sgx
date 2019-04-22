@@ -1,22 +1,19 @@
 # Go with Intel SGX 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)]()
 
-**go-with-intel-sgx** shows an example showing how to make use of Intel SGX in GoLang as a typical c-style library.
-After compiling([cgo target in Makefile](https://github.com/rupc/go-with-intel-sgx/blob/master/Makefile#L214)), it creates *libtee*, which represents library for trusted execution environment and it calls series of functions inside enclave through [cgo](https://golang.org/cmd/cgo/) interface.
+**go-with-intel-sgx** shows how to call C/C++ functions of Intel SGX enclave in Go language using cgo interface.
+
+After compiling([cgo target in Makefile](https://github.com/rupc/go-with-intel-sgx/blob/master/Makefile#L214)) in each sgx provided sample code in SampleCode directory, it creates a *libtee* which calls C/C++ functions for using enclave functionalities.
 
 # How to test
 ```
 source $SGX_SDK/environment # not needed when you already have it
 git clone https://github.com/rupc/go-with-intel-sgx
-cd go-with-intel-sgx
-make cgo
+cd go-with-intel-sgx/SampleCode/Cxx11SGXDemo/
+make && make cgo
 ```
+(It is tested under SGX v2.5)
 
-# Features
-Following features are demonstrated, running inside enclave.
-- Monotonic counter
-- ECDSA: private/public key generation, signing, verifying
-- SHA256
-
-# Reference
-- [hello-enclave](https://github.com/digawp/hello-enclave)
+# TODO
+Currently, I only added Cxx11SGXDemo which is one of the official sample codes by [linux-sgx](https://github.com/intel/linux-sgx/tree/sgx_2.5/SampleCode/Cxx11SGXDemo)
+A plan to add more sample examples as in sgxsdk/SampleCode/ (e.g., RemoteAttestation)
